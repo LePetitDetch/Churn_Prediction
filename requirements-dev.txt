@@ -1,0 +1,10 @@
+-r requirements.txt
+duckdb
+dbt-duckdb
+optuna
+mlflow
+matplotlib
+jupyterlab
+ipykernel
+pytest
+ruff

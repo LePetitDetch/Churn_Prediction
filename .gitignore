@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+
+data/raw/*
+warehouse/*
+
+target/
+logs/
+dbt_packages/
+
+mlruns/
+mlflow.db
+models/

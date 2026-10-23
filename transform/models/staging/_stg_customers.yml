@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Clients Telco nettoyés, une ligne par client.
+    columns:
+      - name: customer_id
+        description: Identifiant unique du client.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: gender
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Female", "Male"]
+
+      - name: contract_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["Month-to-month", "One year", "Two year"]
+
+      - name: internet_service
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["DSL", "Fiber optic", "No"]
+
+      - name: payment_method
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "Bank transfer (automatic)"
+                  - "Credit card (automatic)"
+                  - "Electronic check"
+                  - "Mailed check"
+
+      - name: tenure_months
+        data_tests:
+          - not_null
+
+      - name: monthly_charges
+        data_tests:
+          - not_null
+
+      - name: is_churned
+        description: Cible du modèle, true si le client est parti.
+        data_tests:
+          - not_null

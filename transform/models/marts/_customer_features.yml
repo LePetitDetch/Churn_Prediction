@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customer_features
+    description: Table de features pour le modèle de churn, une ligne par client.
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+      - name: total_charges
+        description: Montant total facturé, 0 pour les clients jamais facturés.
+        data_tests:
+          - not_null
+      - name: nb_services
+        description: Nombre de services souscrits, de 0 à 8.
+        data_tests:
+          - not_null
+      - name: is_churned
+        data_tests:
+          - not_null
